@@ -6,4 +6,3 @@ jobs:
     steps:
       - uses: actions/setup-node@v2
       - run: pwd
-      - run: ll
