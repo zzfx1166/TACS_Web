@@ -1,0 +1,12 @@
+on: push
+
+jobs:
+  jobs1:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: pwd
+      - run: ls
+  jobs2:
+    runs-on: windows-latest
+    steps:
+      - run: node --version
