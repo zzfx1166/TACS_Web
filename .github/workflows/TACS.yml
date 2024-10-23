@@ -1,8 +1,13 @@
-on: push
+on: 
+  push:
+    branches: 
+      - main
+permissions: 
+  contents: write
 
 jobs:
   Build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -10,8 +15,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
 
-      - name: Install dependencies
-        run: npm install  
-
-      - name: Build
-        run: npm run build
+      - name: Install dependencies & Build
+        run: |
+             npm install  
+             npm run build
+  Deploy:
+    needs: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: deploy
+          folder: src
