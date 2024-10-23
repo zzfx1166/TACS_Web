@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body,
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 /* :root {
   font-family: "MiSans VF", MiSans, system-ui, sans-serif;
 } */
