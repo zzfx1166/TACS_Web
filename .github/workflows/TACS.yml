@@ -23,6 +23,11 @@ jobs:
     needs: Build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/upload-artifact@v4
+        with:
+          name: src
+          path: src/
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
