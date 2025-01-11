@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* font */
+html{
+  font-family: "MiSans VF", "MiSans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #0E0E0E;
+}
 
 .navbar-menu:checked ~ label .navbar-menu-arrow {
   --tw-rotate: 180deg;
@@ -17,13 +22,23 @@
 }
 
 .navbar-menu\:block {
-  will-change: max-height, opacity; /* 提升这两个属性的性能 */
   height: 0; /* 初始高度为 0 */
   overflow: hidden; /* 防止内容溢出 */
   opacity: 0; /* 初始透明度为 0 */
 }
  
 .navbar-menu\:block.visible {
-  height: calc(100vh - 64px); /* 目标高度 */
+  height: calc(100vh - 4rem); /* 目标高度 */
   opacity: 1; /* 完全不透明 */
+  background-color: #1e2939;
+}
+
+.navbar-menu\:nav.visible {
+  background-color: #1e2939;
+}
+
+.grid-images{
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
 }
