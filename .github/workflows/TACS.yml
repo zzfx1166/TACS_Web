@@ -6,21 +6,7 @@ permissions:
   contents: write
 
 jobs:
-  Build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-
-      - name: Install dependencies & Build
-        run: |
-             npm install  
-             npm run build
   Deploy:
-    needs: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
